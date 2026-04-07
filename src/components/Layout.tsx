@@ -35,7 +35,7 @@ const Layout = ({ children, showOfficerBadge = true }: LayoutProps) => {
           <div className="flex items-center gap-3">
             <AshokaChakra size={48} />
             <div>
-              <div className="font-heading text-2xl font-bold" style={{ color: '#1a237e' }}>VeriVote</div>
+              <div className="font-heading text-2xl font-bold" style={{ color: '#0B2E33' }}>VeriVote</div>
               <div className="text-xs text-text-muted">National Voter Registration Portal</div>
             </div>
           </div>

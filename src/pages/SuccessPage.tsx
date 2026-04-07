@@ -53,7 +53,7 @@ const SuccessPage = () => {
           <div className="mt-6 bg-blue-light border-2 border-dashed border-blue-primary rounded-xl p-6 text-center">
             <p className="text-xs text-text-muted uppercase tracking-wide mb-2">Generated Voter ID (EPIC Number)</p>
             <div className="flex items-center justify-center gap-3">
-              <span className="font-heading text-4xl font-bold tracking-widest" style={{ color: '#1a237e' }}>{voterId}</span>
+              <span className="font-heading text-4xl font-bold tracking-widest" style={{ color: '#0B2E33' }}>{voterId}</span>
               <button onClick={copyId} className="text-text-muted hover:text-text-primary relative">
                 <Copy size={18} />
                 {copied && <span className="absolute -top-6 left-1/2 -translate-x-1/2 text-xs bg-navy text-white px-2 py-0.5 rounded whitespace-nowrap">Copied!</span>}
@@ -96,7 +96,7 @@ const SuccessPage = () => {
         <div className="mt-6 bg-amber-50 border border-amber-200 rounded-xl p-4">
           <p className="font-heading font-bold text-sm text-amber-800 mb-2">📋 Voter Acknowledgement Notice</p>
           <p className="text-sm text-amber-900">The voter's physical EPIC card will be delivered to their registered address within 30 working days. This reference number may be used to track application status at voters.eci.gov.in</p>
-          <p className="font-heading font-bold mt-2" style={{ color: '#1a237e' }}>Reference No: {refNo}</p>
+          <p className="font-heading font-bold mt-2" style={{ color: '#0B2E33' }}>Reference No: {refNo}</p>
         </div>
 
         {/* Actions */}
