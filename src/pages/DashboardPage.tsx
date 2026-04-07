@@ -52,7 +52,7 @@ const DashboardPage = () => {
         {/* Welcome Bar */}
         <div className="bg-white px-4 md:px-8 py-4 border-b border-border-color flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
           <div>
-            <h1 className="font-heading text-xl font-bold" style={{ color: '#1a237e' }}>Good Morning, Priya Sharma 👋</h1>
+            <h1 className="font-heading text-xl font-bold" style={{ color: '#0B2E33' }}>Good Morning, Priya Sharma 👋</h1>
             <p className="text-sm text-text-muted">Enrollment Drive — Shivajinagar | Tuesday, 7 April 2025</p>
           </div>
           <div className="bg-green-50 border border-green-200 rounded-full px-4 py-1.5 text-xs text-green-700">

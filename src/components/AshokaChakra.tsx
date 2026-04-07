@@ -11,7 +11,7 @@ const AshokaChakra = ({ size = 48 }: { size?: number }) => {
         y1={cy}
         x2={cx + r * Math.cos(angle)}
         y2={cy + r * Math.sin(angle)}
-        stroke="#1a237e"
+        stroke="#0B2E33"
         strokeWidth={1.5}
       />
     );
@@ -19,8 +19,8 @@ const AshokaChakra = ({ size = 48 }: { size?: number }) => {
 
   return (
     <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
-      <circle cx={size/2} cy={size/2} r={size*0.45} fill="none" stroke="#1a237e" strokeWidth={2} />
-      <circle cx={size/2} cy={size/2} r={size*0.12} fill="#1a237e" />
+      <circle cx={size/2} cy={size/2} r={size*0.45} fill="none" stroke="#0B2E33" strokeWidth={2} />
+      <circle cx={size/2} cy={size/2} r={size*0.12} fill="#0B2E33" />
       {spokes}
     </svg>
   );

@@ -76,7 +76,7 @@ const AddressPage = () => {
       <ProgressBar currentStep={2} />
       <div className={`animate-fade-in-up ${shake ? 'animate-shake' : ''}`}>
         <div className="mx-4 md:mx-8 mt-6 mb-4">
-          <h1 className="font-heading text-2xl font-bold" style={{ color: '#1a237e' }}>New Voter Registration — Step 2 of 3</h1>
+          <h1 className="font-heading text-2xl font-bold" style={{ color: '#0B2E33' }}>New Voter Registration — Step 2 of 3</h1>
         </div>
 
         {/* Info Banner */}
@@ -88,7 +88,7 @@ const AddressPage = () => {
         <div className="mx-4 md:mx-8 mt-4 mb-8 bg-white rounded-xl shadow-sm">
           <div className="px-6 py-4 bg-gray-50 border-b border-border-color border-l-4 border-l-blue-primary flex items-center gap-2">
             <MapPin size={18} className="text-blue-primary" />
-            <span className="font-heading text-base font-semibold" style={{ color: '#1a237e' }}>Part B: Address & Constituency Details</span>
+            <span className="font-heading text-base font-semibold" style={{ color: '#0B2E33' }}>Part B: Address & Constituency Details</span>
           </div>
 
           <div className="px-6 py-6 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">

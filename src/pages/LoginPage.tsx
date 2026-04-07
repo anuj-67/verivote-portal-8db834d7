@@ -43,7 +43,7 @@ const LoginPage = () => {
       >
         <div className="w-full max-w-md animate-fade-in-up">
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <div className="p-6 text-center" style={{ backgroundColor: '#1a237e' }}>
+            <div className="p-6 text-center" style={{ backgroundColor: '#0B2E33' }}>
               <Shield className="mx-auto mb-2 text-white" size={32} />
               <h1 className="font-heading text-xl font-bold text-white">Enrollment Officer Login</h1>
               <p className="text-xs text-white/70 mt-1">Authorized Personnel Only</p>

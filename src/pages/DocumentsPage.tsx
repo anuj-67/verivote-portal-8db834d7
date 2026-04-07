@@ -79,7 +79,7 @@ const DocumentsPage = () => {
   };
 
   const fpBorderColor = fpState === 1 ? 'border-blue-primary' : fpState === 2 ? 'border-green-success' : fpState === 3 ? 'border-saffron' : 'border-border-color';
-  const fpColor = fpState === 1 ? '#1565c0' : fpState === 2 ? '#2e7d32' : fpState === 3 ? '#e65100' : '#9ca3af';
+  const fpColor = fpState === 1 ? '#4F7C82' : fpState === 2 ? '#2e7d32' : fpState === 3 ? '#93B1B5' : '#9ca3af';
   const qualityLabel = quality <= 40 ? 'Poor' : quality <= 70 ? 'Good' : 'Excellent';
   const qualityColor = quality <= 40 ? 'text-red-error' : quality <= 70 ? 'text-saffron' : 'text-green-success';
   const barColor = quality <= 40 ? 'bg-red-500' : quality <= 70 ? 'bg-orange-500' : 'bg-green-500';
@@ -98,7 +98,7 @@ const DocumentsPage = () => {
       <ProgressBar currentStep={3} />
       <div className="animate-fade-in-up">
         <div className="mx-4 md:mx-8 mt-6 mb-4">
-          <h1 className="font-heading text-2xl font-bold" style={{ color: '#1a237e' }}>New Voter Registration — Step 3 of 3</h1>
+          <h1 className="font-heading text-2xl font-bold" style={{ color: '#0B2E33' }}>New Voter Registration — Step 3 of 3</h1>
         </div>
 
         <div className="mx-4 md:mx-8 mt-4 mb-4 grid grid-cols-1 lg:grid-cols-5 gap-6">
@@ -107,7 +107,7 @@ const DocumentsPage = () => {
             <div className="bg-white rounded-xl shadow-sm">
               <div className="px-6 py-4 bg-gray-50 border-b border-border-color border-l-4 border-l-blue-primary flex items-center gap-2">
                 <FileText size={18} className="text-blue-primary" />
-                <span className="font-heading text-base font-semibold" style={{ color: '#1a237e' }}>Part D: Identity Documents</span>
+                <span className="font-heading text-base font-semibold" style={{ color: '#0B2E33' }}>Part D: Identity Documents</span>
               </div>
 
               <div className="px-6 py-6 space-y-5">
@@ -201,7 +201,7 @@ const DocumentsPage = () => {
           {/* Right Column — Biometric */}
           <div className="lg:col-span-2">
             <div className="bg-white rounded-xl shadow-sm p-6 lg:sticky lg:top-4">
-              <h3 className="font-heading font-bold text-base flex items-center gap-2 mb-1" style={{ color: '#1a237e' }}>
+              <h3 className="font-heading font-bold text-base flex items-center gap-2 mb-1" style={{ color: '#0B2E33' }}>
                 <span>🖐</span> Part E: Biometric
               </h3>
               <p className="text-sm text-text-muted mb-4">Ask the voter to place their RIGHT index finger flat and still on the MFS100 scanner below.</p>
