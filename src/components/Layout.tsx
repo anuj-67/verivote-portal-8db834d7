@@ -20,6 +20,10 @@ const navLinks = [
 const Layout = ({ children, showOfficerBadge = true }: LayoutProps) => {
   const { currentPage, setCurrentPage } = useEnrollment();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const go = (page: string) => {
+    if (page === '__analytics') { window.location.href = '/analytics/login'; return; }
+    setCurrentPage(page);
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-page-bg">
