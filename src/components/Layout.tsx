@@ -13,13 +13,17 @@ const navLinks = [
   { label: 'Home', page: 'dashboard' },
   { label: 'Enrollment', page: 'personal' },
   { label: 'Booth Login', page: 'login' },
-  { label: 'Admin Panel', page: 'dashboard' },
+  { label: '📊 Analytics', page: '__analytics' },
   { label: 'Help', page: 'dashboard' },
 ];
 
 const Layout = ({ children, showOfficerBadge = true }: LayoutProps) => {
   const { currentPage, setCurrentPage } = useEnrollment();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const go = (page: string) => {
+    if (page === '__analytics') { window.location.href = '/analytics/login'; return; }
+    setCurrentPage(page);
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-page-bg">
@@ -53,7 +57,7 @@ const Layout = ({ children, showOfficerBadge = true }: LayoutProps) => {
             {navLinks.map((link) => (
               <button
                 key={link.label}
-                onClick={() => setCurrentPage(link.page)}
+                onClick={() => go(link.page)}
                 className={`font-heading font-medium text-white text-sm py-3 px-4 transition-colors hover:bg-blue-dark ${
                   currentPage === link.page ? 'border-b-2 border-saffron' : ''
                 }`}
@@ -76,7 +80,7 @@ const Layout = ({ children, showOfficerBadge = true }: LayoutProps) => {
             {navLinks.map((link) => (
               <button
                 key={link.label}
-                onClick={() => { setCurrentPage(link.page); setMobileOpen(false); }}
+                onClick={() => { go(link.page); setMobileOpen(false); }}
                 className="block w-full text-left font-heading text-white text-sm py-2 px-4 hover:bg-blue-dark"
               >
                 {link.label}
