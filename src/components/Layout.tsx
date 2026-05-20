@@ -13,7 +13,7 @@ const navLinks = [
   { label: 'Home', page: 'dashboard' },
   { label: 'Enrollment', page: 'personal' },
   { label: 'Booth Login', page: 'login' },
-  { label: 'Admin Panel', page: 'dashboard' },
+  { label: '📊 Analytics', page: '__analytics' },
   { label: 'Help', page: 'dashboard' },
 ];
 
