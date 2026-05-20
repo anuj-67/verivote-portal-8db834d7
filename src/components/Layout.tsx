@@ -80,7 +80,7 @@ const Layout = ({ children, showOfficerBadge = true }: LayoutProps) => {
             {navLinks.map((link) => (
               <button
                 key={link.label}
-                onClick={() => { setCurrentPage(link.page); setMobileOpen(false); }}
+                onClick={() => { go(link.page); setMobileOpen(false); }}
                 className="block w-full text-left font-heading text-white text-sm py-2 px-4 hover:bg-blue-dark"
               >
                 {link.label}
