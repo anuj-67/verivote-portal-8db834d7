@@ -57,7 +57,7 @@ const Layout = ({ children, showOfficerBadge = true }: LayoutProps) => {
             {navLinks.map((link) => (
               <button
                 key={link.label}
-                onClick={() => setCurrentPage(link.page)}
+                onClick={() => go(link.page)}
                 className={`font-heading font-medium text-white text-sm py-3 px-4 transition-colors hover:bg-blue-dark ${
                   currentPage === link.page ? 'border-b-2 border-saffron' : ''
                 }`}
