@@ -18,18 +18,18 @@ const AnalyticsLayout = ({ children }: Props) => {
 
   return (
     <div
-      className="min-h-screen text-[#e8eaf6]"
+      className="min-h-screen text-[#B8E3E9]"
       style={{
-        backgroundColor: '#0a0e27',
-        backgroundImage: 'radial-gradient(rgba(99,102,241,0.15) 1px, transparent 1px)',
+        backgroundColor: '#0B2E33',
+        backgroundImage: 'radial-gradient(rgba(79,124,130,0.15) 1px, transparent 1px)',
         backgroundSize: '24px 24px',
       }}
     >
       {/* Top Navbar */}
-      <nav className="bg-[#0d1240] border-b border-[#2a2f52] px-4 md:px-8 py-3 flex flex-wrap justify-between items-center gap-3 no-print">
+      <nav className="bg-[#103a40] border-b border-[#4F7C82] px-4 md:px-8 py-3 flex flex-wrap justify-between items-center gap-3 no-print">
         <div className="flex items-center gap-3">
           <button onClick={() => navigate('/')} className="font-heading text-2xl font-bold text-white">VeriVote</button>
-          <span className="text-xs text-[#7986cb] hidden md:inline">Analytics Dashboard</span>
+          <span className="text-xs text-[#93B1B5] hidden md:inline">Analytics Dashboard</span>
         </div>
 
         <div className="flex flex-wrap items-center gap-1">
@@ -41,7 +41,7 @@ const AnalyticsLayout = ({ children }: Props) => {
                 key={item.path}
                 to={item.path}
                 className={`rounded-full px-4 py-1.5 text-xs md:text-sm transition-colors ${
-                  active ? 'bg-[#1565c0] text-white' : 'text-[#7986cb] hover:text-white'
+                  active ? 'bg-[#4F7C82] text-white' : 'text-[#93B1B5] hover:text-white'
                 }`}
               >
                 {item.label}
@@ -55,7 +55,7 @@ const AnalyticsLayout = ({ children }: Props) => {
             <span className={`inline-block w-2 h-2 rounded-full ${isLive ? 'bg-green-400 animate-pulse' : 'bg-gray-500'}`} />
             <span className={`text-xs font-semibold ${isLive ? 'text-green-400' : 'text-gray-400'}`}>{isLive ? 'LIVE' : 'PAUSED'}</span>
           </div>
-          <span className="text-xs text-[#7986cb] hidden md:inline">Updated: {lastUpdated.toLocaleTimeString()}</span>
+          <span className="text-xs text-[#93B1B5] hidden md:inline">Updated: {lastUpdated.toLocaleTimeString()}</span>
           <button
             onClick={toggleLive}
             className={`relative w-10 h-5 rounded-full transition-colors ${isLive ? 'bg-green-500' : 'bg-gray-600'}`}
@@ -69,11 +69,11 @@ const AnalyticsLayout = ({ children }: Props) => {
       <main>{children}</main>
 
       {/* Demo badge */}
-      <div className="fixed bottom-4 right-4 bg-[#111530] border border-[#2a2f52] text-[#e8eaf6] text-xs px-3 py-2 rounded-full shadow-lg z-50 no-print flex items-center gap-2">
+      <div className="fixed bottom-4 right-4 bg-[#143e44] border border-[#4F7C82] text-[#B8E3E9] text-xs px-3 py-2 rounded-full shadow-lg z-50 no-print flex items-center gap-2">
         🔧 Demo | Simulating live vote data
         <button
           onClick={() => bulkSimulate(50)}
-          className="ml-2 bg-[#1565c0] hover:bg-[#0d47a1] text-white rounded-full px-3 py-0.5 text-xs"
+          className="ml-2 bg-[#4F7C82] hover:bg-[#3a5e63] text-white rounded-full px-3 py-0.5 text-xs"
         >
           Simulate 50 votes
         </button>
