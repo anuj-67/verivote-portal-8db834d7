@@ -131,7 +131,7 @@ const FinalResults = () => {
                     const margin = isWinner ? '—' : `-${winner.votes - p.votes} votes`;
                     return (
                       <tr key={p.id}
-                        className={`${isWinner ? '' : i % 2 === 0 ? 'bg-[#ffffff]' : 'bg-[#0B2E33]'} hover:bg-[#e8f4f6]`}
+                        className={`${isWinner ? '' : i % 2 === 0 ? 'bg-[#ffffff]' : 'bg-[#f0f7f8]'} hover:bg-[#e8f4f6]`}
                         style={isWinner ? { backgroundColor: p.color + '1A', borderLeft: `4px solid ${p.color}` } : {}}
                       >
                         <td className="px-6 py-3 font-heading font-bold" style={{ color: rankColor }}>#{i + 1}</td>
@@ -181,7 +181,7 @@ const FinalResults = () => {
                     const pbSorted = [...c.partyBreakdown].sort((a, b) => b.votes - a.votes);
                     const w = pbSorted[0]; const r = pbSorted[1];
                     return (
-                      <tr key={c.id} className={i % 2 === 0 ? 'bg-[#ffffff]' : 'bg-[#0B2E33]'}>
+                      <tr key={c.id} className={i % 2 === 0 ? 'bg-[#ffffff]' : 'bg-[#f0f7f8]'}>
                         <td className="px-6 py-3 text-[#0B2E33] font-semibold">{c.name}</td>
                         <td className="px-6 py-3">
                           <span className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold border"
@@ -203,7 +203,7 @@ const FinalResults = () => {
 
           <div className="flex gap-4 mt-6 no-print">
             <button onClick={() => window.print()} className="border border-[#4F7C82] text-[#0B2E33] hover:bg-[#e8f4f6] rounded-xl px-6 py-3">🖨️ Export as PDF</button>
-            <button onClick={generateCSV} className="border border-[#4F7C82] text-[#4F7C82] hover:bg-[#0B2E33] rounded-xl px-6 py-3">📊 Download CSV</button>
+            <button onClick={generateCSV} className="border border-[#4F7C82] text-[#4F7C82] hover:bg-[#e8f4f6] rounded-xl px-6 py-3">📊 Download CSV</button>
           </div>
         </div>
       </div>

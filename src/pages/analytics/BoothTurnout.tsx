@@ -84,7 +84,7 @@ const BoothTurnout = () => {
         <div className="mt-6 flex flex-wrap gap-3 items-center">
           <span className="text-xs text-[#5a7a7e] font-heading uppercase">Filter by:</span>
           <select value={constFilter} onChange={e => setConstFilter(e.target.value)}
-            className="bg-[#0B2E33] border border-[#4F7C82] text-[#0B2E33] rounded-lg px-3 py-1.5 text-sm">
+            className="bg-white border border-[#B8E3E9] text-[#0B2E33] rounded-lg px-3 py-1.5 text-sm">
             <option value="all">All Constituencies</option>
             {constituencies.map(c => <option key={c.id} value={c.name}>{c.name}</option>)}
           </select>
@@ -99,7 +99,7 @@ const BoothTurnout = () => {
             ))}
           </div>
           <select value={sortBy} onChange={e => setSortBy(e.target.value as SortKey)}
-            className="bg-[#0B2E33] border border-[#4F7C82] text-[#0B2E33] rounded-lg px-3 py-1.5 text-sm">
+            className="bg-white border border-[#B8E3E9] text-[#0B2E33] rounded-lg px-3 py-1.5 text-sm">
             <option value="turnoutDesc">Turnout (High to Low)</option>
             <option value="turnoutAsc">Turnout (Low to High)</option>
             <option value="fraud">Fraud Flags</option>
@@ -131,7 +131,7 @@ const BoothTurnout = () => {
                       : 'bg-red-900/50 text-red-400 border-red-800';
                     const tinnerColor = b.turnout > 70 ? '#22c55e' : b.turnout >= 40 ? '#eab308' : '#ef4444';
                     return (
-                      <tr key={b.boothId} className={`${i % 2 === 0 ? 'bg-[#ffffff]' : 'bg-[#0B2E33]'} hover:bg-[#e8f4f6]`}>
+                      <tr key={b.boothId} className={`${i % 2 === 0 ? 'bg-[#ffffff]' : 'bg-[#f0f7f8]'} hover:bg-[#e8f4f6]`}>
                         <td className="px-4 py-3 text-[#0B2E33] text-sm">{b.boothId}</td>
                         <td className="px-4 py-3 text-[#0B2E33] text-sm">{b.location}</td>
                         <td className="px-4 py-3 text-xs text-[#5a7a7e]">{b.constituency}</td>
@@ -139,7 +139,7 @@ const BoothTurnout = () => {
                         <td className="px-4 py-3 text-[#0B2E33] text-sm">{b.voted}<span className="text-xs text-[#5a7a7e]"> / {b.registered}</span></td>
                         <td className="px-4 py-3">
                           <span className={`inline-block px-3 py-1 rounded-full text-xs border ${tcls}`}>{b.turnout}%</span>
-                          <div className="w-16 bg-[#0B2E33] h-1 rounded-full mt-1 overflow-hidden">
+                          <div className="w-16 bg-[#d4e8eb] h-1 rounded-full mt-1 overflow-hidden">
                             <div className="h-full" style={{ width: `${b.turnout}%`, backgroundColor: tinnerColor }} />
                           </div>
                         </td>

@@ -20,8 +20,8 @@ const AnalyticsLayout = ({ children }: Props) => {
     <div
       className="min-h-screen text-[#0B2E33]"
       style={{
-        backgroundColor: '#0B2E33',
-        backgroundImage: 'radial-gradient(rgba(79,124,130,0.15) 1px, transparent 1px)',
+        backgroundColor: '#e8f0f1',
+        backgroundImage: 'radial-gradient(rgba(79,124,130,0.18) 1px, transparent 1px)',
         backgroundSize: '24px 24px',
       }}
     >

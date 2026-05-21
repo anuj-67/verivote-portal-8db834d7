@@ -81,7 +81,7 @@ const ConstituencyBreakdown = () => {
             <div className="text-xs uppercase tracking-wide text-[#5a7a7e] font-heading">Total Voters</div>
             <div className="font-heading text-3xl font-bold text-[#0B2E33] mt-1">{c.totalVoters.toLocaleString()}</div>
           </div>
-          <div className="bg-[#0B2E33] border border-[#4F7C82] rounded-xl p-4">
+          <div className="bg-white border border-[#B8E3E9] rounded-xl p-4">
             <div className="text-xs uppercase tracking-wide text-[#5a7a7e] font-heading">Votes Cast</div>
             <div className="font-heading text-3xl font-bold text-[#4F7C82] mt-1">{c.votesCast.toLocaleString()}</div>
           </div>
@@ -131,7 +131,7 @@ const ConstituencyBreakdown = () => {
                     : b.turnout >= 40 ? 'bg-yellow-900/50 text-yellow-400 border-yellow-800'
                     : 'bg-red-900/50 text-red-400 border-red-800';
                   return (
-                    <tr key={b.boothId} className={`${i % 2 === 0 ? 'bg-[#ffffff]' : 'bg-[#0B2E33]'} hover:bg-[#e8f4f6] transition-colors`}>
+                    <tr key={b.boothId} className={`${i % 2 === 0 ? 'bg-[#ffffff]' : 'bg-[#f0f7f8]'} hover:bg-[#e8f4f6] transition-colors`}>
                       <td className="px-6 py-3 text-[#0B2E33] text-sm">{b.boothId}</td>
                       <td className="px-6 py-3 text-[#0B2E33] text-sm">{b.location}</td>
                       <td className="px-6 py-3 text-[#0B2E33] text-sm">{b.registered}</td>

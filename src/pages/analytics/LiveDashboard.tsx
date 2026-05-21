@@ -109,7 +109,7 @@ const LiveDashboard = () => {
             <div className="text-xs text-[#5a7a7e] mt-1">Karnataka State Constituency</div>
           </div>
 
-          <div className="bg-[#0B2E33] border border-[#4F7C82] rounded-xl p-5">
+          <div className="bg-white border border-[#B8E3E9] rounded-xl p-5">
             <div className="flex items-center gap-2 text-xs font-heading uppercase tracking-wide text-[#5a7a7e]">
               <CheckCircle size={16} className="text-[#4F7C82]" /> VOTES CAST
             </div>
@@ -154,7 +154,7 @@ const LiveDashboard = () => {
                   style={{ borderColor: p.color }}
                 >
                   <div
-                    className="absolute top-2 left-2 w-6 h-6 rounded-full bg-[#0B2E33] flex items-center justify-center text-xs"
+                    className="absolute top-2 left-2 w-6 h-6 rounded-full bg-[#B8E3E9] flex items-center justify-center text-xs"
                     style={{ color: idx === 0 ? '#ffd700' : '#5a7a7e' }}
                   >
                     #{idx + 1}
@@ -226,7 +226,7 @@ const LiveDashboard = () => {
                       <tr
                         key={c.id}
                         onClick={() => navigate(`/analytics/constituency?id=${c.id}`)}
-                        className={`${i % 2 === 0 ? 'bg-[#ffffff]' : 'bg-[#0B2E33]'} hover:bg-[#e8f4f6] cursor-pointer transition-colors`}
+                        className={`${i % 2 === 0 ? 'bg-[#ffffff]' : 'bg-[#f0f7f8]'} hover:bg-[#e8f4f6] cursor-pointer transition-colors`}
                       >
                         <td className="px-6 py-3 text-[#0B2E33] font-semibold">{c.name}</td>
                         <td className="px-6 py-3 text-[#0B2E33]">

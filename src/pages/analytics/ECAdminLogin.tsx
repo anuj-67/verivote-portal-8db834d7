@@ -23,7 +23,7 @@ const ECAdminLogin = () => {
     <div
       className="min-h-screen flex items-center justify-center p-4"
       style={{
-        backgroundColor: '#0B2E33',
+        backgroundColor: '#e8f0f1',
         backgroundImage: 'radial-gradient(rgba(79,124,130,0.15) 1px, transparent 1px)',
         backgroundSize: '24px 24px',
       }}
@@ -52,7 +52,7 @@ const ECAdminLogin = () => {
                   onChange={e => setOfficerId(e.target.value)}
                   required
                   placeholder="ECI/EC/2025/0001"
-                  className="w-full bg-[#0B2E33] border border-[#4F7C82] text-[#0B2E33] placeholder-[#5a7a7e]/50 rounded-lg pl-10 pr-3 py-2.5 focus:border-[#4F7C82] outline-none"
+                  className="w-full bg-white border border-[#B8E3E9] text-[#0B2E33] placeholder-[#5a7a7e]/60 rounded-lg pl-10 pr-3 py-2.5 focus:border-[#4F7C82] outline-none"
                 />
               </div>
             </div>
@@ -66,7 +66,7 @@ const ECAdminLogin = () => {
                   onChange={e => setPw(e.target.value)}
                   required
                   placeholder="••••••••"
-                  className="w-full bg-[#0B2E33] border border-[#4F7C82] text-[#0B2E33] rounded-lg px-3 py-2.5 pr-10 focus:border-[#4F7C82] outline-none"
+                  className="w-full bg-white border border-[#B8E3E9] text-[#0B2E33] rounded-lg px-3 py-2.5 pr-10 focus:border-[#4F7C82] outline-none"
                 />
                 <button type="button" onClick={() => setShowPw(v => !v)} className="absolute right-3 top-1/2 -translate-y-1/2 text-[#5a7a7e]">
                   {showPw ? <EyeOff size={18} /> : <Eye size={18} />}
@@ -79,7 +79,7 @@ const ECAdminLogin = () => {
               <select
                 value={access}
                 onChange={e => setAccess(e.target.value)}
-                className="w-full mt-1 bg-[#0B2E33] border border-[#4F7C82] text-[#0B2E33] rounded-lg px-3 py-2.5 focus:border-[#4F7C82] outline-none"
+                className="w-full mt-1 bg-white border border-[#B8E3E9] text-[#0B2E33] rounded-lg px-3 py-2.5 focus:border-[#4F7C82] outline-none"
               >
                 <option value="full">Full Analytics Access</option>
                 <option value="constituency">Constituency Observer</option>
