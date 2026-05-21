@@ -72,8 +72,8 @@ const LiveDashboard = () => {
     labels: parties.map(p => p.abbreviation),
     datasets: [{
       data: parties.map(p => p.votes),
-      backgroundColor: parties.map(p => p.color + 'DD'),
-      borderColor: parties.map(p => p.color),
+      backgroundColor: parties.map((_, i) => themePalette[i % themePalette.length] + 'DD'),
+      borderColor: '#ffffff',
       borderWidth: 2,
       hoverOffset: 8,
     }],
