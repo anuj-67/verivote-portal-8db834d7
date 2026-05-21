@@ -36,7 +36,7 @@ const ConstituencyBreakdown = () => {
     plugins: { legend: { display: false } },
     scales: {
       x: { grid: { display: false }, ticks: { color: '#0B2E33', font: { family: 'Rajdhani', size: 14 } } },
-      y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#5a7a7e' } },
+      y: { grid: { color: 'rgba(11,46,51,0.08)' }, ticks: { color: '#5a7a7e' } },
     },
   };
   const donutData = {

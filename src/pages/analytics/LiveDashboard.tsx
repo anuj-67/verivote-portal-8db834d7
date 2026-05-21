@@ -62,7 +62,7 @@ const LiveDashboard = () => {
       },
     },
     scales: {
-      x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#5a7a7e' } },
+      x: { grid: { color: 'rgba(11,46,51,0.08)' }, ticks: { color: '#5a7a7e' } },
       y: { grid: { display: false }, ticks: { color: '#0B2E33', font: { family: 'Rajdhani', size: 14 } } },
     },
   };
