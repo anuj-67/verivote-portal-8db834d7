@@ -243,13 +243,13 @@ const LiveDashboard = () => {
                         <td className="px-6 py-3">
                           <span
                             className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold border"
-                            style={{ color: partyMeta?.color, borderColor: (partyMeta?.color ?? '#5a7a7e') + '4D', backgroundColor: (partyMeta?.color ?? '#5a7a7e') + '26' }}
+                            style={{ color: '#0B2E33', borderColor: '#4F7C82', backgroundColor: '#B8E3E933' }}
                           >
-                            <span className="w-2 h-2 rounded-full" style={{ backgroundColor: partyMeta?.color }} />
+                            <span className="w-2 h-2 rounded-full" style={{ backgroundColor: '#4F7C82' }} />
                             {winner.party}
                           </span>
                         </td>
-                        <td className="px-6 py-3 text-xs text-green-400">+{winner.votes - (runner?.votes ?? 0)} votes</td>
+                        <td className="px-6 py-3 text-xs text-[#4F7C82] font-semibold">+{winner.votes - (runner?.votes ?? 0)} votes</td>
                         <td className="px-6 py-3 text-[#4F7C82] hover:underline text-sm">View →</td>
                       </tr>
                     );
