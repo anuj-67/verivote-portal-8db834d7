@@ -33,14 +33,15 @@ const LiveDashboard = () => {
   const sortedParties = useMemo(() => [...parties].sort((a, b) => b.votes - a.votes), [parties]);
   const countdown = useCountdown(liveTurnout.pollingEndsAt, liveTurnout.pollingOpen);
 
+  const themePalette = ['#0B2E33', '#4F7C82', '#93B1B5', '#B8E3E9', '#6E9498'];
   const barData = {
     labels: parties.map(p => p.abbreviation),
     datasets: [{
       data: parties.map(p => p.votes),
-      backgroundColor: parties.map(p => p.color + 'CC'),
-      borderColor: parties.map(p => p.color),
-      borderWidth: 2,
-      borderRadius: 6,
+      backgroundColor: parties.map((_, i) => themePalette[i % themePalette.length] + 'CC'),
+      borderColor: parties.map((_, i) => themePalette[i % themePalette.length]),
+      borderWidth: 1,
+      borderRadius: 4,
     }],
   };
 
