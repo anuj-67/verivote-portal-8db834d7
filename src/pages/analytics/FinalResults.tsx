@@ -15,7 +15,11 @@ const FinalResults = () => {
   const totalVotes = parties.reduce((s, p) => s + p.votes, 0);
   const winnerPct = ((winner.votes / totalVotes) * 100).toFixed(1);
 
-  const partyColor = (abbr: string) => parties.find(p => p.abbreviation === abbr)?.color ?? '#5a7a7e';
+  const themePalette = ['#0B2E33', '#4F7C82', '#93B1B5', '#B8E3E9', '#6E9498'];
+  const partyColor = (abbr: string) => {
+    const idx = sorted.findIndex(p => p.abbreviation === abbr);
+    return themePalette[(idx >= 0 ? idx : 0) % themePalette.length];
+  };
 
   const generateCSV = () => {
     const headers = ['Party', 'Abbreviation', 'Votes', 'Percentage'];
