@@ -21,14 +21,15 @@ const ConstituencyBreakdown = () => {
     : c.turnout >= 40 ? 'bg-yellow-900/50 text-yellow-400 border-yellow-800'
     : 'bg-red-900/50 text-red-400 border-red-800';
 
+  const themePalette = ['#0B2E33', '#4F7C82', '#93B1B5', '#B8E3E9', '#6E9498'];
   const barData = {
     labels: c.partyBreakdown.map(p => p.party),
     datasets: [{
       data: c.partyBreakdown.map(p => p.votes),
-      backgroundColor: c.partyBreakdown.map(p => (partyMap(p.party)?.color ?? '#5a7a7e') + 'CC'),
-      borderColor: c.partyBreakdown.map(p => partyMap(p.party)?.color ?? '#5a7a7e'),
-      borderWidth: 2,
-      borderRadius: 6,
+      backgroundColor: c.partyBreakdown.map((_, i) => themePalette[i % themePalette.length] + 'CC'),
+      borderColor: c.partyBreakdown.map((_, i) => themePalette[i % themePalette.length]),
+      borderWidth: 1,
+      borderRadius: 4,
     }],
   };
   const barOptions: any = {
@@ -43,8 +44,8 @@ const ConstituencyBreakdown = () => {
     labels: c.partyBreakdown.map(p => p.party),
     datasets: [{
       data: c.partyBreakdown.map(p => p.votes),
-      backgroundColor: c.partyBreakdown.map(p => (partyMap(p.party)?.color ?? '#5a7a7e') + 'DD'),
-      borderColor: c.partyBreakdown.map(p => partyMap(p.party)?.color ?? '#5a7a7e'),
+      backgroundColor: c.partyBreakdown.map((_, i) => themePalette[i % themePalette.length] + 'DD'),
+      borderColor: '#ffffff',
       borderWidth: 2,
     }],
   };
