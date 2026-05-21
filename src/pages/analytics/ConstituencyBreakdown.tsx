@@ -44,8 +44,8 @@ const ConstituencyBreakdown = () => {
     labels: c.partyBreakdown.map(p => p.party),
     datasets: [{
       data: c.partyBreakdown.map(p => p.votes),
-      backgroundColor: c.partyBreakdown.map(p => (partyMap(p.party)?.color ?? '#5a7a7e') + 'DD'),
-      borderColor: c.partyBreakdown.map(p => partyMap(p.party)?.color ?? '#5a7a7e'),
+      backgroundColor: c.partyBreakdown.map((_, i) => themePalette[i % themePalette.length] + 'DD'),
+      borderColor: '#ffffff',
       borderWidth: 2,
     }],
   };
