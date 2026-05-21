@@ -70,28 +70,28 @@ const FinalResults = () => {
         <div
           className="relative overflow-hidden text-center py-10 px-8"
           style={{
-            background: `linear-gradient(135deg, ${winner.color}33, ${winner.color}11)`,
-            borderBottom: `3px solid ${winner.color}`,
+            background: `linear-gradient(135deg, #B8E3E966, #B8E3E922)`,
+            borderBottom: `3px solid #0B2E33`,
           }}
         >
           {confettiPieces.map(i => (
             <span key={i} className="confetti no-print" style={{
               left: `${Math.random() * 100}%`,
               top: '-20px',
-              backgroundColor: parties[i % parties.length].color,
+              backgroundColor: themePalette[i % themePalette.length],
               animationDuration: `${2 + Math.random() * 2}s`,
               animationDelay: `${Math.random() * 2}s`,
             }} />
           ))}
           <div className="text-7xl mb-2">🏆</div>
           <div className="text-6xl mb-2">{winner.emoji}</div>
-          <div className="font-heading text-4xl font-bold" style={{ color: winner.color, textShadow: `0 0 24px ${winner.color}99` }}>
+          <div className="font-heading text-4xl font-bold" style={{ color: '#0B2E33' }}>
             {winner.name}
           </div>
-          <div className="font-heading text-2xl text-[#0B2E33]/80 mt-2">WINS KARNATAKA CONSTITUENCY</div>
+          <div className="font-heading text-2xl text-[#4F7C82] mt-2">WINS KARNATAKA CONSTITUENCY</div>
           <div
             className="inline-block mt-4 rounded-full px-6 py-2 font-heading font-bold border"
-            style={{ backgroundColor: winner.color + '33', borderColor: winner.color, color: '#fff' }}
+            style={{ backgroundColor: '#0B2E33', borderColor: '#0B2E33', color: '#B8E3E9' }}
           >
             {winner.votes.toLocaleString()} votes | {winnerPct}% of total
           </div>
