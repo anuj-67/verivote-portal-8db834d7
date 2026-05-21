@@ -35,7 +35,7 @@ const EVMScreen = () => {
 
   return (
     <div className="min-h-screen bg-[#0d1b4b] text-white">
-      <div className="bg-[#1a237e] p-8 text-center">
+      <div className="bg-[#0B2E33] p-8 text-center">
         <div className="flex justify-center mb-2"><AshokaChakra size={64} /></div>
         <div className="font-heading text-[28px] font-bold">ELECTRONIC VOTING MACHINE</div>
         <div className="text-sm text-white/70 mt-1">Election Commission of India — General Elections 2025</div>
@@ -54,10 +54,10 @@ const EVMScreen = () => {
           <button
             key={p.id}
             onClick={() => { setSelectedId(p.id); setStage('confirm'); }}
-            className="bg-[#111530] border-2 border-[#2a2f52] rounded-xl p-4 cursor-pointer flex items-center gap-4 transition-all duration-200 hover:scale-[1.02] text-left"
+            className="bg-[#143e44] border-2 border-[#4F7C82] rounded-xl p-4 cursor-pointer flex items-center gap-4 transition-all duration-200 hover:scale-[1.02] text-left"
             style={{ '--c': p.color } as any}
-            onMouseEnter={e => { e.currentTarget.style.borderColor = p.color; e.currentTarget.style.backgroundColor = '#1a1f3e'; }}
-            onMouseLeave={e => { e.currentTarget.style.borderColor = '#2a2f52'; e.currentTarget.style.backgroundColor = '#111530'; }}
+            onMouseEnter={e => { e.currentTarget.style.borderColor = p.color; e.currentTarget.style.backgroundColor = '#1c4f55'; }}
+            onMouseLeave={e => { e.currentTarget.style.borderColor = '#4F7C82'; e.currentTarget.style.backgroundColor = '#143e44'; }}
           >
             <div className="flex items-center justify-center w-14 h-14 rounded-full text-4xl"
               style={{ backgroundColor: p.color + '33', border: `2px solid ${p.color}` }}>
@@ -65,10 +65,10 @@ const EVMScreen = () => {
             </div>
             <div className="flex-1">
               <div className="font-heading text-xl font-bold text-white">{p.abbreviation}</div>
-              <div className="text-sm text-[#7986cb]">{p.name}</div>
+              <div className="text-sm text-[#93B1B5]">{p.name}</div>
             </div>
-            <div className="w-12 h-12 rounded-full bg-[#1a1f3e] border-2 border-[#2a2f52] flex items-center justify-center">
-              <span className="w-3 h-3 rounded-full bg-[#2a2f52]" />
+            <div className="w-12 h-12 rounded-full bg-[#1c4f55] border-2 border-[#4F7C82] flex items-center justify-center">
+              <span className="w-3 h-3 rounded-full bg-[#4F7C82]" />
             </div>
           </button>
         ))}
@@ -77,9 +77,9 @@ const EVMScreen = () => {
       {/* Confirmation Modal */}
       {stage === 'confirm' && selected && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-[#111530] border border-[#2a2f52] rounded-2xl p-8 max-w-sm w-full text-center">
+          <div className="bg-[#143e44] border border-[#4F7C82] rounded-2xl p-8 max-w-sm w-full text-center">
             <div className="text-6xl mb-2">{selected.emoji}</div>
-            <div className="text-sm text-[#7986cb]">You have selected</div>
+            <div className="text-sm text-[#93B1B5]">You have selected</div>
             <div className="font-heading text-2xl font-bold text-white mt-1">{selected.name}</div>
             <div className="font-heading text-lg font-medium mt-1" style={{ color: selected.color }}>{selected.abbreviation}</div>
             <div className="text-sm text-amber-400 mt-4">⚠️ This action cannot be undone.</div>
@@ -87,7 +87,7 @@ const EVMScreen = () => {
               <button onClick={handleConfirm} className="w-full text-white font-heading font-bold py-3 rounded-xl text-lg" style={{ backgroundColor: selected.color }}>
                 ✓ Confirm Vote
               </button>
-              <button onClick={() => { setStage('select'); setSelectedId(null); }} className="w-full bg-[#1a1f3e] border border-[#2a2f52] text-[#7986cb] rounded-xl py-3">
+              <button onClick={() => { setStage('select'); setSelectedId(null); }} className="w-full bg-[#1c4f55] border border-[#4F7C82] text-[#93B1B5] rounded-xl py-3">
                 ← Go Back
               </button>
             </div>

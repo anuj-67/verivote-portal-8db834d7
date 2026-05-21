@@ -45,46 +45,46 @@ const BoothTurnout = () => {
   };
 
   const pill = (active: boolean) =>
-    active ? 'bg-[#1565c0] text-white' : 'bg-[#111530] border border-[#2a2f52] text-[#7986cb] hover:text-white';
+    active ? 'bg-[#4F7C82] text-white' : 'bg-[#143e44] border border-[#4F7C82] text-[#93B1B5] hover:text-white';
 
   return (
     <AnalyticsLayout>
       <div className="px-4 md:px-8 pt-6 pb-12">
-        <Link to="/analytics/dashboard" className="text-[#7986cb] hover:text-white text-sm">← Back to Dashboard</Link>
-        <h1 className="font-heading text-3xl font-bold text-[#e8eaf6] mt-3">Booth-wise Turnout Monitor</h1>
-        <div className="text-sm text-[#7986cb]">All polling booths — Live status</div>
+        <Link to="/analytics/dashboard" className="text-[#93B1B5] hover:text-white text-sm">← Back to Dashboard</Link>
+        <h1 className="font-heading text-3xl font-bold text-[#B8E3E9] mt-3">Booth-wise Turnout Monitor</h1>
+        <div className="text-sm text-[#93B1B5]">All polling booths — Live status</div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
-          <div className="bg-[#111530] border border-[#2a2f52] rounded-xl p-5">
-            <div className="text-xs uppercase tracking-wide text-[#7986cb] font-heading">Total Booths Active</div>
+          <div className="bg-[#143e44] border border-[#4F7C82] rounded-xl p-5">
+            <div className="text-xs uppercase tracking-wide text-[#93B1B5] font-heading">Total Booths Active</div>
             <div className="flex items-center gap-2 mt-2">
               <span className="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse" />
-              <span className="font-heading text-3xl font-bold text-[#e8eaf6]">{activeCount}</span>
+              <span className="font-heading text-3xl font-bold text-[#B8E3E9]">{activeCount}</span>
             </div>
           </div>
-          <div className="bg-[#111530] border border-[#2a2f52] rounded-xl p-5">
-            <div className="text-xs uppercase tracking-wide text-[#7986cb] font-heading">Average Turnout</div>
+          <div className="bg-[#143e44] border border-[#4F7C82] rounded-xl p-5">
+            <div className="text-xs uppercase tracking-wide text-[#93B1B5] font-heading">Average Turnout</div>
             <span className={`inline-block mt-2 px-3 py-1 rounded-full text-sm border ${
               avgTurnout > 70 ? 'bg-green-900/50 text-green-400 border-green-800'
               : avgTurnout >= 40 ? 'bg-yellow-900/50 text-yellow-400 border-yellow-800'
               : 'bg-red-900/50 text-red-400 border-red-800'
             }`}>{avgTurnout}%</span>
           </div>
-          <div className="bg-[#111530] border border-[#2a2f52] rounded-xl p-5">
-            <div className="text-xs uppercase tracking-wide text-[#7986cb] font-heading">Total Fraud Flags</div>
+          <div className="bg-[#143e44] border border-[#4F7C82] rounded-xl p-5">
+            <div className="text-xs uppercase tracking-wide text-[#93B1B5] font-heading">Total Fraud Flags</div>
             <div className="mt-2">
               {totalFraud > 0
                 ? <span className="inline-block bg-red-900/50 text-red-400 border border-red-800 rounded-full px-3 py-1 text-sm">⚠️ {totalFraud}</span>
-                : <span className="text-[#7986cb]">—</span>}
+                : <span className="text-[#93B1B5]">—</span>}
             </div>
           </div>
         </div>
 
         {/* Filters */}
         <div className="mt-6 flex flex-wrap gap-3 items-center">
-          <span className="text-xs text-[#7986cb] font-heading uppercase">Filter by:</span>
+          <span className="text-xs text-[#93B1B5] font-heading uppercase">Filter by:</span>
           <select value={constFilter} onChange={e => setConstFilter(e.target.value)}
-            className="bg-[#0a0e27] border border-[#2a2f52] text-[#e8eaf6] rounded-lg px-3 py-1.5 text-sm">
+            className="bg-[#0B2E33] border border-[#4F7C82] text-[#B8E3E9] rounded-lg px-3 py-1.5 text-sm">
             <option value="all">All Constituencies</option>
             {constituencies.map(c => <option key={c.id} value={c.name}>{c.name}</option>)}
           </select>
@@ -99,7 +99,7 @@ const BoothTurnout = () => {
             ))}
           </div>
           <select value={sortBy} onChange={e => setSortBy(e.target.value as SortKey)}
-            className="bg-[#0a0e27] border border-[#2a2f52] text-[#e8eaf6] rounded-lg px-3 py-1.5 text-sm">
+            className="bg-[#0B2E33] border border-[#4F7C82] text-[#B8E3E9] rounded-lg px-3 py-1.5 text-sm">
             <option value="turnoutDesc">Turnout (High to Low)</option>
             <option value="turnoutAsc">Turnout (Low to High)</option>
             <option value="fraud">Fraud Flags</option>
@@ -107,20 +107,20 @@ const BoothTurnout = () => {
           </select>
         </div>
 
-        <div className="bg-[#111530] border border-[#2a2f52] rounded-xl overflow-hidden mt-4">
-          <div className="text-xs text-[#7986cb] px-6 py-3 border-b border-[#2a2f52]">{filteredBooths.length} booths shown</div>
+        <div className="bg-[#143e44] border border-[#4F7C82] rounded-xl overflow-hidden mt-4">
+          <div className="text-xs text-[#93B1B5] px-6 py-3 border-b border-[#4F7C82]">{filteredBooths.length} booths shown</div>
           {filteredBooths.length === 0 ? (
             <div className="p-12 text-center">
-              <div className="text-[#7986cb]">No booths match your filters</div>
-              <button onClick={resetFilters} className="mt-4 bg-[#1565c0] text-white px-4 py-1.5 rounded-lg text-sm">Reset filters</button>
+              <div className="text-[#93B1B5]">No booths match your filters</div>
+              <button onClick={resetFilters} className="mt-4 bg-[#4F7C82] text-white px-4 py-1.5 rounded-lg text-sm">Reset filters</button>
             </div>
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full">
-                <thead className="bg-[#0a0e27] sticky top-0 z-10">
+                <thead className="bg-[#0B2E33] sticky top-0 z-10">
                   <tr>
                     {['Booth ID', 'Location', 'Constituency', 'Registered', 'Voted', 'Turnout %', 'Fraud Flags', 'Status'].map(h => (
-                      <th key={h} className="text-xs font-heading uppercase tracking-wide text-[#7986cb] px-4 py-3 text-left whitespace-nowrap">{h}</th>
+                      <th key={h} className="text-xs font-heading uppercase tracking-wide text-[#93B1B5] px-4 py-3 text-left whitespace-nowrap">{h}</th>
                     ))}
                   </tr>
                 </thead>
@@ -131,15 +131,15 @@ const BoothTurnout = () => {
                       : 'bg-red-900/50 text-red-400 border-red-800';
                     const tinnerColor = b.turnout > 70 ? '#22c55e' : b.turnout >= 40 ? '#eab308' : '#ef4444';
                     return (
-                      <tr key={b.boothId} className={`${i % 2 === 0 ? 'bg-[#111530]' : 'bg-[#0d1240]'} hover:bg-[#1a1f3e]`}>
-                        <td className="px-4 py-3 text-[#e8eaf6] text-sm">{b.boothId}</td>
-                        <td className="px-4 py-3 text-[#e8eaf6] text-sm">{b.location}</td>
-                        <td className="px-4 py-3 text-xs text-[#7986cb]">{b.constituency}</td>
-                        <td className="px-4 py-3 text-[#e8eaf6] text-sm">{b.registered}</td>
-                        <td className="px-4 py-3 text-[#e8eaf6] text-sm">{b.voted}<span className="text-xs text-[#7986cb]"> / {b.registered}</span></td>
+                      <tr key={b.boothId} className={`${i % 2 === 0 ? 'bg-[#143e44]' : 'bg-[#103a40]'} hover:bg-[#1c4f55]`}>
+                        <td className="px-4 py-3 text-[#B8E3E9] text-sm">{b.boothId}</td>
+                        <td className="px-4 py-3 text-[#B8E3E9] text-sm">{b.location}</td>
+                        <td className="px-4 py-3 text-xs text-[#93B1B5]">{b.constituency}</td>
+                        <td className="px-4 py-3 text-[#B8E3E9] text-sm">{b.registered}</td>
+                        <td className="px-4 py-3 text-[#B8E3E9] text-sm">{b.voted}<span className="text-xs text-[#93B1B5]"> / {b.registered}</span></td>
                         <td className="px-4 py-3">
                           <span className={`inline-block px-3 py-1 rounded-full text-xs border ${tcls}`}>{b.turnout}%</span>
-                          <div className="w-16 bg-[#0a0e27] h-1 rounded-full mt-1 overflow-hidden">
+                          <div className="w-16 bg-[#0B2E33] h-1 rounded-full mt-1 overflow-hidden">
                             <div className="h-full" style={{ width: `${b.turnout}%`, backgroundColor: tinnerColor }} />
                           </div>
                         </td>
@@ -148,7 +148,7 @@ const BoothTurnout = () => {
                             ? <span className="inline-block bg-red-900/60 text-red-300 border border-red-700 rounded-full px-2 py-0.5 text-xs">⚠️ {b.fraudFlags} High</span>
                             : b.fraudFlags > 0
                               ? <span className="inline-block bg-orange-900/50 text-orange-400 border border-orange-800 rounded-full px-2 py-0.5 text-xs">{b.fraudFlags}</span>
-                              : <span className="text-[#7986cb]">—</span>}
+                              : <span className="text-[#93B1B5]">—</span>}
                         </td>
                         <td className="px-4 py-3">
                           <span className={`inline-block rounded-full px-3 py-0.5 text-xs border ${
