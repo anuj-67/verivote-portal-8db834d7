@@ -130,30 +130,31 @@ const FinalResults = () => {
                 <tbody>
                   {sorted.map((p, i) => {
                     const pct = ((p.votes / totalVotes) * 100).toFixed(2);
-                    const rankColor = i === 0 ? '#ffd700' : i === 1 ? '#c0c0c0' : i === 2 ? '#cd7f32' : '#5a7a7e';
+                    const themeColor = themePalette[i % themePalette.length];
+                    const rankColor = i === 0 ? '#0B2E33' : i === 1 ? '#4F7C82' : i === 2 ? '#93B1B5' : '#5a7a7e';
                     const isWinner = i === 0;
                     const margin = isWinner ? '—' : `-${winner.votes - p.votes} votes`;
                     return (
                       <tr key={p.id}
                         className={`${isWinner ? '' : i % 2 === 0 ? 'bg-[#ffffff]' : 'bg-[#f0f7f8]'} hover:bg-[#e8f4f6]`}
-                        style={isWinner ? { backgroundColor: p.color + '1A', borderLeft: `4px solid ${p.color}` } : {}}
+                        style={isWinner ? { backgroundColor: '#B8E3E933', borderLeft: `4px solid #0B2E33` } : {}}
                       >
                         <td className="px-6 py-3 font-heading font-bold" style={{ color: rankColor }}>#{i + 1}</td>
                         <td className="px-6 py-3 text-[#0B2E33] font-semibold">{p.name}</td>
                         <td className="px-6 py-3 text-2xl">{p.emoji}</td>
                         <td className="px-6 py-3 text-[#0B2E33]">{p.votes.toLocaleString()}</td>
                         <td className="px-6 py-3">
-                          <div className="text-[#0B2E33] text-sm">{pct}%</div>
-                          <div className="w-full h-1.5 bg-[#4F7C82] rounded-full mt-1 overflow-hidden">
-                            <div className="h-full" style={{ backgroundColor: p.color, width: `${pct}%` }} />
+                          <div className="text-[#4F7C82] text-sm font-semibold">{pct}%</div>
+                          <div className="w-full h-1.5 bg-[#B8E3E9] rounded-full mt-1 overflow-hidden">
+                            <div className="h-full" style={{ backgroundColor: themeColor, width: `${pct}%` }} />
                           </div>
                         </td>
                         <td className="px-6 py-3">
                           {isWinner
-                            ? <span className="inline-block bg-[#ffd700] text-[#0B2E33] rounded-full px-3 py-0.5 text-xs font-heading font-bold">🏆 WINNER</span>
+                            ? <span className="inline-block bg-[#0B2E33] text-[#B8E3E9] rounded-full px-3 py-0.5 text-xs font-heading font-bold">🏆 WINNER</span>
                             : <span className="text-[#5a7a7e] text-xs">—</span>}
                         </td>
-                        <td className="px-6 py-3 text-xs text-red-400">{margin}</td>
+                        <td className="px-6 py-3 text-xs text-[#93B1B5]">{margin}</td>
                       </tr>
                     );
                   })}
