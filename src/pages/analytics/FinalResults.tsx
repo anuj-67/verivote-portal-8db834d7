@@ -36,10 +36,10 @@ const FinalResults = () => {
     labels: sorted.map(p => p.abbreviation),
     datasets: [{
       data: sorted.map(p => p.votes),
-      backgroundColor: sorted.map(p => p.color + 'CC'),
-      borderColor: sorted.map(p => p.color),
-      borderWidth: 2,
-      borderRadius: 6,
+      backgroundColor: sorted.map((_, i) => themePalette[i % themePalette.length] + 'CC'),
+      borderColor: sorted.map((_, i) => themePalette[i % themePalette.length]),
+      borderWidth: 1,
+      borderRadius: 4,
     }],
   };
   const barOptions: any = {
