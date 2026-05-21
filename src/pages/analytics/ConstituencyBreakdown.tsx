@@ -90,12 +90,12 @@ const ConstituencyBreakdown = () => {
             <div className="text-xs uppercase tracking-wide text-[#5a7a7e] font-heading">Turnout</div>
             <span className={`inline-block mt-2 px-3 py-1 rounded-full text-sm border ${turnoutClass}`}>{c.turnout}%</span>
           </div>
-          <div className="bg-[#ffffff] border-2 rounded-xl p-4" style={{ borderColor: winnerMeta?.color }}>
+          <div className="bg-[#ffffff] border-2 rounded-xl p-4" style={{ borderColor: '#0B2E33' }}>
             <div className="text-xs uppercase tracking-wide text-[#5a7a7e] font-heading">Leading Party</div>
             <div className="flex items-center gap-2 mt-1">
               <span className="text-3xl">{winnerMeta?.emoji}</span>
               <div>
-                <div className="font-heading font-bold text-lg" style={{ color: winnerMeta?.color }}>{sortedPB[0].party}</div>
+                <div className="font-heading font-bold text-lg" style={{ color: '#0B2E33' }}>{sortedPB[0].party}</div>
                 <div className="text-xs text-[#5a7a7e]">{sortedPB[0].votes} votes</div>
               </div>
             </div>
