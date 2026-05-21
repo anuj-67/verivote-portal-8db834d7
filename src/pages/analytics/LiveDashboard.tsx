@@ -148,36 +148,37 @@ const LiveDashboard = () => {
             {sortedParties.map((p, idx) => {
               const pct = totalVotes ? +((p.votes / totalVotes) * 100).toFixed(1) : 0;
               const diff = p.votes - p.previousVotes;
+              const themeColor = themePalette[idx % themePalette.length];
               return (
                 <div
                   key={p.id}
                   className="relative bg-[#ffffff] border-2 rounded-xl p-5 text-center transition-all duration-500"
-                  style={{ borderColor: p.color }}
+                  style={{ borderColor: themeColor }}
                 >
                   <div
-                    className="absolute top-2 left-2 w-6 h-6 rounded-full bg-[#B8E3E9] flex items-center justify-center text-xs"
-                    style={{ color: idx === 0 ? '#ffd700' : '#5a7a7e' }}
+                    className="absolute top-2 left-2 w-6 h-6 rounded-full bg-[#B8E3E9] flex items-center justify-center text-xs font-bold"
+                    style={{ color: '#0B2E33' }}
                   >
                     #{idx + 1}
                   </div>
                   <div className="text-5xl mb-2">{p.emoji}</div>
-                  <div className="font-heading text-2xl font-bold text-white">{p.abbreviation}</div>
+                  <div className="font-heading text-2xl font-bold text-[#0B2E33]">{p.abbreviation}</div>
                   <div className="text-xs text-[#5a7a7e] mt-0.5">{p.name}</div>
                   <div
                     className="font-heading text-3xl font-bold mt-3"
-                    style={{ color: p.color, textShadow: `0 0 16px ${p.color}66` }}
+                    style={{ color: themeColor }}
                   >
                     <AnimatedCounter value={p.votes} />
                   </div>
-                  <div className="text-sm text-[#5a7a7e] mt-1">{pct}%</div>
-                  <div className="w-full h-1.5 bg-[#4F7C82] rounded-full mt-2 overflow-hidden">
-                    <div className="h-full transition-all duration-1000" style={{ backgroundColor: p.color, width: `${pct}%` }} />
+                  <div className="text-sm font-semibold mt-1" style={{ color: '#4F7C82' }}>{pct}%</div>
+                  <div className="w-full h-1.5 bg-[#B8E3E9] rounded-full mt-2 overflow-hidden">
+                    <div className="h-full transition-all duration-1000" style={{ backgroundColor: themeColor, width: `${pct}%` }} />
                   </div>
                   <div className="mt-2 text-xs">
-                    {diff > 0 ? <span className="text-green-400">▲ +{diff}</span> : <span className="text-[#5a7a7e]">— No change</span>}
+                    {diff > 0 ? <span className="text-[#4F7C82] font-semibold">▲ +{diff}</span> : <span className="text-[#93B1B5]">— No change</span>}
                   </div>
                   {idx === 0 && (
-                    <div className="mt-3 inline-block bg-[#ffd700] text-[#0B2E33] rounded-full px-3 py-0.5 text-xs font-heading font-bold">🏆 LEADING</div>
+                    <div className="mt-3 inline-block bg-[#0B2E33] text-[#B8E3E9] rounded-full px-3 py-0.5 text-xs font-heading font-bold">🏆 LEADING</div>
                   )}
                 </div>
               );
@@ -242,13 +243,13 @@ const LiveDashboard = () => {
                         <td className="px-6 py-3">
                           <span
                             className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold border"
-                            style={{ color: partyMeta?.color, borderColor: (partyMeta?.color ?? '#5a7a7e') + '4D', backgroundColor: (partyMeta?.color ?? '#5a7a7e') + '26' }}
+                            style={{ color: '#0B2E33', borderColor: '#4F7C82', backgroundColor: '#B8E3E933' }}
                           >
-                            <span className="w-2 h-2 rounded-full" style={{ backgroundColor: partyMeta?.color }} />
+                            <span className="w-2 h-2 rounded-full" style={{ backgroundColor: '#4F7C82' }} />
                             {winner.party}
                           </span>
                         </td>
-                        <td className="px-6 py-3 text-xs text-green-400">+{winner.votes - (runner?.votes ?? 0)} votes</td>
+                        <td className="px-6 py-3 text-xs text-[#4F7C82] font-semibold">+{winner.votes - (runner?.votes ?? 0)} votes</td>
                         <td className="px-6 py-3 text-[#4F7C82] hover:underline text-sm">View →</td>
                       </tr>
                     );

@@ -15,7 +15,11 @@ const FinalResults = () => {
   const totalVotes = parties.reduce((s, p) => s + p.votes, 0);
   const winnerPct = ((winner.votes / totalVotes) * 100).toFixed(1);
 
-  const partyColor = (abbr: string) => parties.find(p => p.abbreviation === abbr)?.color ?? '#5a7a7e';
+  const themePalette = ['#0B2E33', '#4F7C82', '#93B1B5', '#B8E3E9', '#6E9498'];
+  const partyColor = (abbr: string) => {
+    const idx = sorted.findIndex(p => p.abbreviation === abbr);
+    return themePalette[(idx >= 0 ? idx : 0) % themePalette.length];
+  };
 
   const generateCSV = () => {
     const headers = ['Party', 'Abbreviation', 'Votes', 'Percentage'];
@@ -32,10 +36,10 @@ const FinalResults = () => {
     labels: sorted.map(p => p.abbreviation),
     datasets: [{
       data: sorted.map(p => p.votes),
-      backgroundColor: sorted.map(p => p.color + 'CC'),
-      borderColor: sorted.map(p => p.color),
-      borderWidth: 2,
-      borderRadius: 6,
+      backgroundColor: sorted.map((_, i) => themePalette[i % themePalette.length] + 'CC'),
+      borderColor: sorted.map((_, i) => themePalette[i % themePalette.length]),
+      borderWidth: 1,
+      borderRadius: 4,
     }],
   };
   const barOptions: any = {
@@ -66,28 +70,28 @@ const FinalResults = () => {
         <div
           className="relative overflow-hidden text-center py-10 px-8"
           style={{
-            background: `linear-gradient(135deg, ${winner.color}33, ${winner.color}11)`,
-            borderBottom: `3px solid ${winner.color}`,
+            background: `linear-gradient(135deg, #B8E3E966, #B8E3E922)`,
+            borderBottom: `3px solid #0B2E33`,
           }}
         >
           {confettiPieces.map(i => (
             <span key={i} className="confetti no-print" style={{
               left: `${Math.random() * 100}%`,
               top: '-20px',
-              backgroundColor: parties[i % parties.length].color,
+              backgroundColor: themePalette[i % themePalette.length],
               animationDuration: `${2 + Math.random() * 2}s`,
               animationDelay: `${Math.random() * 2}s`,
             }} />
           ))}
           <div className="text-7xl mb-2">🏆</div>
           <div className="text-6xl mb-2">{winner.emoji}</div>
-          <div className="font-heading text-4xl font-bold" style={{ color: winner.color, textShadow: `0 0 24px ${winner.color}99` }}>
+          <div className="font-heading text-4xl font-bold" style={{ color: '#0B2E33' }}>
             {winner.name}
           </div>
-          <div className="font-heading text-2xl text-[#0B2E33]/80 mt-2">WINS KARNATAKA CONSTITUENCY</div>
+          <div className="font-heading text-2xl text-[#4F7C82] mt-2">WINS KARNATAKA CONSTITUENCY</div>
           <div
             className="inline-block mt-4 rounded-full px-6 py-2 font-heading font-bold border"
-            style={{ backgroundColor: winner.color + '33', borderColor: winner.color, color: '#fff' }}
+            style={{ backgroundColor: '#0B2E33', borderColor: '#0B2E33', color: '#B8E3E9' }}
           >
             {winner.votes.toLocaleString()} votes | {winnerPct}% of total
           </div>
@@ -126,30 +130,31 @@ const FinalResults = () => {
                 <tbody>
                   {sorted.map((p, i) => {
                     const pct = ((p.votes / totalVotes) * 100).toFixed(2);
-                    const rankColor = i === 0 ? '#ffd700' : i === 1 ? '#c0c0c0' : i === 2 ? '#cd7f32' : '#5a7a7e';
+                    const themeColor = themePalette[i % themePalette.length];
+                    const rankColor = i === 0 ? '#0B2E33' : i === 1 ? '#4F7C82' : i === 2 ? '#93B1B5' : '#5a7a7e';
                     const isWinner = i === 0;
                     const margin = isWinner ? '—' : `-${winner.votes - p.votes} votes`;
                     return (
                       <tr key={p.id}
                         className={`${isWinner ? '' : i % 2 === 0 ? 'bg-[#ffffff]' : 'bg-[#f0f7f8]'} hover:bg-[#e8f4f6]`}
-                        style={isWinner ? { backgroundColor: p.color + '1A', borderLeft: `4px solid ${p.color}` } : {}}
+                        style={isWinner ? { backgroundColor: '#B8E3E933', borderLeft: `4px solid #0B2E33` } : {}}
                       >
                         <td className="px-6 py-3 font-heading font-bold" style={{ color: rankColor }}>#{i + 1}</td>
                         <td className="px-6 py-3 text-[#0B2E33] font-semibold">{p.name}</td>
                         <td className="px-6 py-3 text-2xl">{p.emoji}</td>
                         <td className="px-6 py-3 text-[#0B2E33]">{p.votes.toLocaleString()}</td>
                         <td className="px-6 py-3">
-                          <div className="text-[#0B2E33] text-sm">{pct}%</div>
-                          <div className="w-full h-1.5 bg-[#4F7C82] rounded-full mt-1 overflow-hidden">
-                            <div className="h-full" style={{ backgroundColor: p.color, width: `${pct}%` }} />
+                          <div className="text-[#4F7C82] text-sm font-semibold">{pct}%</div>
+                          <div className="w-full h-1.5 bg-[#B8E3E9] rounded-full mt-1 overflow-hidden">
+                            <div className="h-full" style={{ backgroundColor: themeColor, width: `${pct}%` }} />
                           </div>
                         </td>
                         <td className="px-6 py-3">
                           {isWinner
-                            ? <span className="inline-block bg-[#ffd700] text-[#0B2E33] rounded-full px-3 py-0.5 text-xs font-heading font-bold">🏆 WINNER</span>
+                            ? <span className="inline-block bg-[#0B2E33] text-[#B8E3E9] rounded-full px-3 py-0.5 text-xs font-heading font-bold">🏆 WINNER</span>
                             : <span className="text-[#5a7a7e] text-xs">—</span>}
                         </td>
-                        <td className="px-6 py-3 text-xs text-red-400">{margin}</td>
+                        <td className="px-6 py-3 text-xs text-[#93B1B5]">{margin}</td>
                       </tr>
                     );
                   })}
